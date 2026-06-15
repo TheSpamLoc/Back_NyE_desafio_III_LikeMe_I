@@ -17,8 +17,11 @@ function App() {
   };
 
   const agregarPost = async () => {
+    //se modifica original para mensajes a usuario y validación de campos vacíos
     const post = { titulo, url: imgSrc, descripcion };
-    await axios.post(urlBaseServer + "/posts", post);
+    const respuesta = await axios.post(urlBaseServer + "/posts", post);
+    alert(respuesta.data);
+
     getPosts();
   };
 
